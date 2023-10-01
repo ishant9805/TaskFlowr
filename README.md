@@ -1,4 +1,4 @@
-# TaskFlowr
+# ![TaskFlowr](static/icons8-todo-list-arcade-96.ico "TaskFlowr") TaskFlowr
 
 TaskFlowr is a sleek and intuitive todo app built with Flask and Bootstrap.
 
