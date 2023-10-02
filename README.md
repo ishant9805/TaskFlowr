@@ -44,6 +44,12 @@ Contributions are welcome! If you'd like to contribute to TaskFlowr, please foll
 4. Push your changes to your forked repository.
 5. Submit a pull request.
 
+### Contributors
+
+1. [Ishant Kumar](github.com/ishant9805)
+2. [Harshit Kumar](github.com/harshit81201)
+3. [Arka](github.com/Nevrohelios)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
