@@ -7,9 +7,9 @@ CREATE TABLE user (
     password TEXT NOT NULL,
     email TEXT NOT NULL,
     firstname TEXT NOT NULL,
-    lastname TEXT NOT NULL,
-    date_of_birth TEXT NOT NULL,
-    gender TEXT NOT NULL
+    lastname TEXT,
+    date_of_birth TEXT,
+    gender TEXT
 );
 
 CREATE TABLE tasks (
