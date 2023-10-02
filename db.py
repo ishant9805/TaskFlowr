@@ -23,7 +23,7 @@ task_description varchar(255)
 def function(#parameters if any):
     try:
         #Setup connection
-        conn=mc.connect(host="localhost",username="root",password="your_db_password",database="to-do")
+        conn=mc.connect(host="localhost",username="root",password="Tanwar9867@",database="to-do")
         cursor=conn.cursor()
         conn.start_transaction()
         
@@ -59,7 +59,7 @@ import datetime
 def add_user(user_details):
     #user_details->[0]=user_name,[1]=user_email,[2]=user_password
     try:
-        conn=mc.connect(host="localhost",username="root",password="your_db_password",database="to_do")
+        conn=mc.connect(host="localhost",username="root",password="Tanwar9867@",database="to_do")
         cursor=conn.cursor()
         conn.start_transaction()
 
@@ -86,7 +86,7 @@ def add_user(user_details):
 def add_task(task_details):
     #task_details->[0]=user_id(foreign key),[1]=task_title,[2]=task_description,[3]=date
     try:
-        conn=mc.connect(host="localhost",username="root",password="your_db_password",database="to_do")
+        conn=mc.connect(host="localhost",username="root",password="Tanwar9867@",database="to_do")
         cursor=conn.cursor()
         conn.start_transaction()
 
@@ -117,7 +117,7 @@ add_task(task_details)
 def delete_task(task_details):
     #task_details=task_id
     try:
-        conn=mc.connect(host="localhost",username="root",password="your_db_password",database="to_do")
+        conn=mc.connect(host="localhost",username="root",password="Tanwar9867@",database="to_do")
         cursor=conn.cursor()
         conn.start_transaction()
 
@@ -127,7 +127,7 @@ def delete_task(task_details):
         cursor.execute(query,parameters)
         db_return=cursor.fetchall()
 
-        return [True,db_return]
+        return [True]
 
     except Exception as e:
         conn.rollback()
@@ -153,7 +153,7 @@ def edit_task(edit_code,task_details):
         Pending,Completed,Cancelled
     """
     try:
-        conn=mc.connect(host="localhost",username="root",password="your_db_password",database="to_do")
+        conn=mc.connect(host="localhost",username="root",password="Tanwar9867@",database="to_do")
         cursor=conn.cursor()
         conn.start_transaction()
         if edit_code==1:
@@ -197,7 +197,28 @@ def edit_task(edit_code,task_details):
 #task_details=[2,2]
 #print(edit_task(2,task_details))
 
+def show_tasks_db(user_id):
+    #task_details=task_id
+    try:
+        conn=mc.connect(host="localhost",username="root",password="Tanwar9867@",database="to_do")
+        cursor=conn.cursor()
+        conn.start_transaction()
 
+        query="SELECT * FROM tasks WHERE user_id=(%s);"
+        parameters=[user_id]
 
+        cursor.execute(query,parameters)
+        db_return=cursor.fetchall()
+
+        return [True,db_return]
+
+    except Exception as e:
+        conn.rollback()
+        print(f"An error occured as {e}")
+        return[False,e]
+    finally:
+        conn.commit()
+        cursor.close()
+        conn.close()
 
 
