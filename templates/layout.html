@@ -13,7 +13,7 @@
           <div class="col-md-3 mb-2 mb-md-0">
             <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
               <img width="45px" height="auto" src="{{ url_for('static', filename='icons8-todo-list-arcade-96.ico' ) }}" alt="logo">
-              <h2 style="padding-top: 8px;">TaskFlowr🌼</h2>
+              <!-- <h2 style="padding-top: 8px;">TaskFlowr🌼</h2> -->
             </a>
           </div>
           
@@ -25,8 +25,13 @@
           </ul>
           
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            {% if g.user %}
+              <span class="h5 mx-4 align-middle">Hi, {{ g.user['username'] }}</span>
+              <a class="btn btn-outline-danger" href="{{ url_for('auth.logout') }}">Log Out</a>
+            {% else %}
+              <a class="btn btn-primary mx-2 mb-1" href="{{ url_for('auth.register') }}">Register</a>
+              <a class="btn btn-outline-primary" href="{{ url_for('auth.login') }}">Log In</a>
+            {% endif %}
           </div>
         </header>
       </div>
