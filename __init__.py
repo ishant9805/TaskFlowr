@@ -34,8 +34,11 @@ def create_app():
     def about():
         return render_template('about.html')
     
-    from . import database
-    database.init_app(app)
+    from . import datab
+    datab.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
     
     return app
 
