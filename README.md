@@ -48,7 +48,7 @@ Contributions are welcome! If you'd like to contribute to TaskFlowr, please foll
 
 1. [Ishant Kumar](github.com/ishant9805)
 2. [Harshit Kumar](github.com/harshit81201)
-3. [Arka](github.com/Nevrohelios)
+3. [Arka Dash](github.com/Nevrohelios)
 
 ## License
 
