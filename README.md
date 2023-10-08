@@ -60,6 +60,6 @@ TaskFlowr was inspired by the need for a simple and efficient todo app. We would
 
 ## Contact
 
-For any questions or inquiries, please contact us at [ishant9805@gmail.com](ishant9805@gmail.com)
+For any issues, open [issue](https://github.com/ishant9805/TaskFlowr/issues/new/choose)
 
 [![An image of @ishant9805's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/ishant9805)](https://holopin.io/@ishant9805)
